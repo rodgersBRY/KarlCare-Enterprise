@@ -11,7 +11,7 @@
         SECURE <br />
       </h1>
     </div>
-
+<!-- 
     <div class="track-product">
       <h2>Track Your Product</h2>
       <div>
@@ -19,7 +19,7 @@
         <input type="email" name="email" id="email" placeholder="Email" />
         <button>TRACK YOUR PRODUCT</button>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
