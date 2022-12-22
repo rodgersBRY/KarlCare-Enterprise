@@ -30,19 +30,55 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@media (min-width: 1000px) {
+  .title-section {
+    h2 {
+      font-size: 100px;
+    }
+    h3 {
+      font-size: 26px;
+      top: 40%;
+      left: 45%;
+    }
+  }
+
+  .cards {
+    .card {
+      width: 350px;
+      margin: 2rem;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .title-section {
+    h2 {
+      font-size: 60px;
+    }
+    h3 {
+      font-size: 20px;
+      top: 30%;
+      left: 30%;
+    }
+  }
+
+  .cards {
+    flex-direction: column;
+    .card {
+      width: 80%;
+      margin: 1rem auto;
+    }
+  }
+}
 .title-section {
   position: relative;
   text-align: center;
   h2 {
-    font-size: 100px;
     color: var(--accent-color);
   }
   h3 {
     color: grey;
-    font-size: 26px;
     position: absolute;
-    top: 40%;
-    left: 45%;
   }
 }
 .cards {
@@ -50,9 +86,7 @@ export default {
   justify-content: space-between;
   .card {
     background: var(--faded-select-color);
-    width: 350px;
     padding: 3rem 3rem;
-    margin: 2rem;
     .divider {
       background: var(--secondary-color);
       height: 3px;

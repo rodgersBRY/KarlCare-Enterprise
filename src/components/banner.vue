@@ -5,7 +5,11 @@
       <li>- INNOVATION</li>
       <li>- SAFETY</li>
       <li>- CUSTOMER CARE</li>
-      <h1>TOP NOTCH, SAFE AND SECURE <br> COURIER SERVICES</h1>
+      <h1>
+        TOP NOTCH <br />
+        SAFE <br />
+        SECURE <br />
+      </h1>
     </div>
 
     <div class="track-product">
@@ -20,10 +24,46 @@
 </template>
 
 <style lang="scss" scoped>
+@media (min-width: 1000px) {
+  #banner {
+    background-image: url("../assets/delivery3.webp");
+    position: relative;
+    height: 70vh;
+    .banner-contents {
+      position: relative;
+      top: 20%;
+      padding: 0 1rem;
+      li {
+        display: inline-block;
+        margin: 2rem 10px;
+        font-size: 30px;
+      }
+    }
+    .track-product {
+      position: absolute;
+      bottom: -15%;
+      width: 70%;
+      height: 35%;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  #banner {
+    background-image: url("../assets/delivery3-mobile.webp");
+    padding: 1rem 0;
+    li {
+      margin: 1rem 0;
+    }
+    .track-product {
+      margin-top: 1rem;
+      width: 90%;
+    }
+  }
+}
+
 #banner {
-  position: relative;
-  height: 70vh;
-  background-image: url("../assets/delivery3.jpg");
+ 
   background-size: cover;
   background-attachment: fixed;
   color: white;
@@ -32,16 +72,10 @@
   align-items: center;
   justify-items: center;
   .banner-contents {
-    position: relative;
-    top: 20%;
     width: 100%;
     text-align: center;
-    padding: 0 1rem;
     li {
       list-style: none;
-      display: inline-block;
-      margin: 2rem 10px;
-      font-size: 30px;
     }
     h1 {
       font-size: 50px;
@@ -50,15 +84,10 @@
   .track-product {
     text-align: center;
     padding: 2rem 1rem;
-    width: 70%;
-    height: 35%;
     background: white;
     color: black;
-    position: absolute;
-    bottom: -15%;
     border-radius: 5px;
     box-shadow: 2px 2px 5px grey;
-
     div {
       margin-top: 1rem;
       display: flex;

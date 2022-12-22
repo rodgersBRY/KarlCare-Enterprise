@@ -127,10 +127,6 @@ textarea {
 }
 
 main {
-  width: 70%;
-  margin: 0 auto;
-  border: 1px solid var(--border-color);
-  padding: 20px;
   h3 > span {
     color: var(--secondary-color);
   }
@@ -149,13 +145,12 @@ main {
       }
     }
   }
+
   .pickup-address,
   .dropoff-address,
   .basic-info {
     background: var(--faded-select-color);
     text-align: center;
-    padding: 1rem;
-    margin: 0 16px;
     h3 {
       margin: 20px 0;
     }
@@ -164,7 +159,6 @@ main {
   .delivery-info {
     background: var(--faded-select-color);
     padding: 2rem;
-    margin: 0 16px;
     label:first-child {
       display: block;
     }
@@ -240,7 +234,6 @@ main {
 
   .addresses,
   .more-info {
-    margin: 3rem;
     display: flex;
     input,
     textarea {
@@ -249,11 +242,6 @@ main {
       background: white;
       margin: 10px 0;
     }
-  }
-
-  .more-info > .delivery-info,
-  .basic-info {
-    width: 50%;
   }
 
   .submit-btn {
@@ -271,6 +259,57 @@ main {
         background: black;
       }
     }
+  }
+}
+
+@media (min-width: 1000px) {
+  main {
+    margin: 0 auto;
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    width: 70%;
+    .addresses {
+      margin: 3rem 0;
+      .pickup-address,
+      .dropoff-address {
+        padding: 1rem;
+      }
+    }
+    .more-info {
+      .basic-info,
+      .delivery-info {
+        width: 50%;
+        margin: 0 16px;
+      }
+    }
+    .pickup-address,
+    .dropoff-address,
+    .basic-info {
+      padding: 2rem;
+      margin: 0 16px;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .addresses {
+    margin: 3rem 1rem 0 1rem;
+  }
+  .more-info {
+    margin: 1rem 1rem 0 1rem;
+  }
+  .addresses,
+  .more-info {
+    flex-direction: column;
+  }
+  .basic-info {
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  .pickup-address,
+  .dropoff-address {
+    padding: 1rem;
+    margin: 16px 0;
   }
 }
 </style>

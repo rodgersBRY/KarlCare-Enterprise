@@ -41,22 +41,39 @@ export default {
     "delivery-section": require("../components/delivery_section.vue").default,
     "parallax-section": require("../components/parallax.vue").default,
     "services-section": require("../components/services.vue").default,
-    "contact-section": require('../components/contact-us.vue').default
+    "contact-section": require("../components/contact-us.vue").default,
   },
 };
 </script>
 
 <style lang="scss" scoped>
+@media (min-width: 1000px) {
+  main {
+    border: 1px solid var(--border-color);
+    width: 70%;
+    margin: 0 auto;
+    .delivery-section {
+      margin-top: 10rem;
+    }
+    .parallax-section {
+      margin-top: 7rem;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  main {
+    .delivery-section {
+      padding: 0 2rem;
+      margin-top: 3rem;
+    }
+    .services-section {
+      margin-top: 3rem;
+    }
+  }
+}
+
 main {
-  border: 1px solid var(--border-color);
-  width: 70%;
-  margin: 0 auto;
-  .delivery-section {
-    margin-top: 10rem;
-  }
-  .parallax-section {
-    margin-top: 7rem;
-  }
   .services-section {
     margin-top: 7rem;
   }

@@ -44,8 +44,22 @@
 textarea {
   resize: none;
 }
+
+@media (min-width: 1000px) {
+  .contact-us {
+    background-image: url("../assets/delivery4.webp");
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 1000px) {
+  .contact-us {
+    background-image: url("../assets/delivery4-mobile.webp");
+    flex-direction: column;
+  }
+}
+
 .contact-us {
-  background-image: url("../assets/delivery4.jpg");
   background-size: cover;
   background-attachment: fixed;
   display: flex;

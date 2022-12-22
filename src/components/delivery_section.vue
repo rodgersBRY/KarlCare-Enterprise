@@ -1,6 +1,6 @@
 <template>
   <div class="delivery">
-    <img width="50%" :src="require('../assets/delivery1.jpg')" alt="" />
+    <img :src="require('../assets/delivery1.webp')" alt="" />
     <div class="delivery-text">
       <h1>Highly Professional Staff</h1>
       <div class="divider"></div>
@@ -13,7 +13,10 @@
         move their packages safely and as fast as possible
       </p>
 
-      <button style="display: flex; align-items: center">
+      <button
+        style="display: flex; align-items: center"
+        @click="$router.push({ name: 'Order' })"
+      >
         ORDER NOW <span><i class="bx bx-right-arrow-alt bx-sm"></i></span>
       </button>
     </div>
@@ -21,19 +24,35 @@
 </template>
 
 <style lang="scss" scoped>
+@media (min-width: 1000px) {
+  .delivery {
+    align-items: center;
+    img {
+      width: 50%;
+      position: relative;
+      left: 5%;
+      height: 500px;
+    }
+    .delivery-text {
+      padding: 5rem 5rem 2rem 7rem;
+      margin-right: 5%;
+      width: 50%;
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .delivery {
+    flex-direction: column;
+    .delivery-text {
+      padding: 2rem;
+    }
+  }
+}
 .delivery {
   display: flex;
-  align-items: center;
-  img {
-    position: relative;
-    left: 5%;
-    height: 500px;
-  }
   .delivery-text {
-    padding: 5rem 5rem 2rem 7rem;
-    margin-right: 5%;
-    width: 50%;
-    height: 100%;
     background: var(--faded-select-color);
     h1 {
       font-size: 50px;

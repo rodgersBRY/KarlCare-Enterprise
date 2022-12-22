@@ -4,7 +4,9 @@
       <div>
         <button class="twitter"><i class="bx bxl-twitter bx-md"></i></button>
         <button class="facebook"><i class="bx bxl-facebook bx-md"></i></button>
-        <button class="instagram"><i class="bx bxl-instagram bx-md"></i></button>
+        <button class="instagram">
+          <i class="bx bxl-instagram bx-md"></i>
+        </button>
       </div>
       <div>
         <p style="display: flex; align-items: center">
@@ -16,7 +18,11 @@
 
     <div class="messenger">
       <div class="logo-div">
-        <img width="300px" :src="require('../assets/logo.png')" alt="KarlCare Enterprises" />
+        <img
+          width="300px"
+          :src="require('../assets/logo.png')"
+          alt="KarlCare Enterprises"
+        />
       </div>
 
       <div class="services">
@@ -78,15 +84,59 @@ export default {
   }
 }
 
-button {
-  width: 100px;
-  height: 100px;
+@media (min-width: 1000px) {
+  #footer {
+    width: 70%;
+    margin: 0 auto;
+
+    button {
+      width: 100px;
+      height: 100px;
+    }
+
+    .messenger {
+    justify-content: space-between;
+      padding: 3rem 4rem;
+    }
+
+    .copyright {
+      justify-content: space-between;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  #footer {
+    width: 100%;
+    .socials-phone {
+      button {
+        width: 70px;
+        height: 70px;
+      }
+      div:not(:first-child) {
+        display: none;
+      }
+    }
+    .messenger {
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem;
+      .logo-div {
+        margin: 2rem 0;
+      }
+      .customer-care, .services {
+        margin: 1rem 0;
+      }
+    }
+    .copyright {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 }
 
 #footer {
   font-size: 14px;
-  width: 70%;
-  margin: 0 auto;
   .socials-phone {
     background: rgb(229, 229, 229);
     display: flex;
@@ -108,9 +158,7 @@ button {
   }
   .messenger {
     background: var(--accent-color);
-    padding: 3rem 4rem;
     display: flex;
-    justify-content: space-between;
     ul {
       margin-top: 1rem;
       list-style: none;
@@ -130,7 +178,6 @@ button {
   .copyright {
     background: var(--accent-color);
     display: flex;
-    justify-content: space-between;
     padding: 2rem 3rem;
     color: grey;
     .link {

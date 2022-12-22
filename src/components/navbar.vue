@@ -1,5 +1,5 @@
 <template>
-  <div id="navbar" :class="[scrollPosition > 50 ? 'after50' : 'before50']">
+  <div id="navbar" :class="[scrollPosition > 60 ? 'after60' : 'before60']">
     <div class="logo-div" @click="$router.push({ name: 'Home' })">
       <img
         width="200px"
@@ -8,15 +8,33 @@
       />
     </div>
 
-    <div class="nav-links">
+    <div class="mobile-items">
+      <button class="order-btn" @click="$router.push({ name: 'Order' })">
+        ORDER ONLINE
+      </button>
+      <v-btn icon class="mobile-menu-icon" @click="openNav">
+        <i class="bx bx-menu bx-md"></i>
+      </v-btn>
+    </div>
+
+    <div class="mobile-nav-items">
+      <v-btn icon dark class="close-nav-btn" @click="closeNav"
+        ><i class="bx bx-x bx-md"></i
+      ></v-btn>
+      <br />
+      <br />
       <router-link tag="li" exact-active-class="active" to="/">
         Home
       </router-link>
-      <!-- <router-link tag="li" active-class="active" to="/about">
-        About
-      </router-link>-->
-      <router-link tag="li" active-class="active" to="/services">
-        Services
+      <button class="call-btn"><i class="bx bx-phone"></i>0712359979</button>
+      <button class="order-btn" @click="$router.push({ name: 'Order' })">
+        ORDER ONLINE
+      </button>
+    </div>
+
+    <div class="nav-links">
+      <router-link tag="li" exact-active-class="active" to="/">
+        Home
       </router-link>
       <button class="call-btn"><i class="bx bx-phone"></i>0712359979</button>
       <button class="order-btn" @click="$router.push({ name: 'Order' })">
@@ -42,29 +60,61 @@ export default {
     updateScroll() {
       this.scrollPosition = window.scrollY;
     },
+    openNav() {
+      let mobileNav = document.getElementsByClassName("mobile-nav-items")[0];
+      mobileNav.style.height = "35vh";
+    },
+    closeNav() {
+      let mobileNav = document.getElementsByClassName("mobile-nav-items")[0];
+      mobileNav.style.height = "0";
+    },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-.after50 {
+.after60 {
   box-shadow: 0px 2px 3px grey;
   position: fixed;
   z-index: 1;
-  padding: 0 10px;
+  // padding: 0 10px;
   width: 100%;
 }
 
-.before50 {
-  box-shadow: 0px 2px 3px grey;
-  width: 70%;
-  margin: 0 auto;
-  padding: 0 10px;
+// mobile device
+@media (max-width: 1000px) {
+  .before60 {
+    width: 100%;
+  }
+  .mobile-items {
+    display: inline-block;
+    .order-btn {
+      background: var(--button-color);
+      padding: 10px;
+      color: white;
+      margin-right: 10px;
+    }
+  }
+  .nav-links {
+    display: none;
+  }
+}
+
+// desktop device
+@media (min-width: 1000px) {
+  .before60 {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .mobile-items {
+    display: none;
+  }
 }
 
 #navbar {
   background: white;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   .logo-div {
     display: flex;
@@ -80,6 +130,42 @@ export default {
         font-size: 20px;
         color: var(--secondary-color);
       }
+    }
+  }
+  .mobile-nav-items {
+    transition: height 1s ease;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 100vw;
+    background: var(--secondary-color);
+    color: white;
+    li {
+      padding: 1rem;
+      list-style: none;
+      margin: 2rem 0;
+      &:hover {
+        background: var(--accent-color);
+        color: black;
+      }
+    }
+
+    .call-btn,
+    .order-btn {
+      margin-left: 20px;
+      background: var(--button-color);
+      padding: 20px;
+    }
+    .call-btn {
+      margin-right: 10px;
+    }
+
+    .close-nav-btn {
+      position: absolute;
+      right: 5%;
+      top: 10px;
     }
   }
   .nav-links {
